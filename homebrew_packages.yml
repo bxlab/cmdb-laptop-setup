@@ -10,9 +10,6 @@
         - homebrew/python
         - caskroom/cask
         - caskroom/fonts
-
-    - name: Install 'brew cask' command (and force brew update)
-      homebrew: name=brew-cask state=latest update_homebrew=yes
       
     - name: Install cask dependencies (Java, Xquartz)
       homebrew_cask: name={{item}}
