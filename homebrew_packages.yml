@@ -3,9 +3,9 @@
   connection: local
   tasks:
 
-    - name: Tap additional homebrew repositories we use
-      homebrew_tap: name={{item}}
-      with_items:
+    # - name: Tap additional homebrew repositories we use
+      # homebrew_tap: name={{item}}
+      # with_items:
         # - homebrew/science
         # - homebrew/python
         # - caskroom/cask
