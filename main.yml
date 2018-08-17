@@ -17,9 +17,6 @@
 
 - include: homebrew_packages.yml
 
-# All installed from casks now.
-# - include: mac_apps.yml
+# - include: python_packages.yml
 
-- include: python_packages.yml
-
-- include: r_packages.yml
+# - include: r_packages.yml
