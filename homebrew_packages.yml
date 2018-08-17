@@ -8,8 +8,8 @@
       with_items:
         # - homebrew/science
         # - homebrew/python
-        - caskroom/cask
-        - caskroom/fonts
+        # - caskroom/cask
+        # - caskroom/fonts
       
     - name: Install cask dependencies (Java, Xquartz)
       homebrew_cask: name={{item}}
