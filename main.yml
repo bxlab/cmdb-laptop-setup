@@ -16,7 +16,3 @@
 - include: apps/homebrew.yml
 
 - include: homebrew_packages.yml
-
-# - include: python_packages.yml
-
-# - include: r_packages.yml
