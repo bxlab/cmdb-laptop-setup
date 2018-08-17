@@ -2,94 +2,10 @@
 
 Playbook for configuring Johns Hopkins CMDB laptops, based on https://github.com/i11/mac-dev-playbook
 
-## Mac Applications installed
+Installs brew and uses brew cask to install Mac apps (editors, R and R Studio)
 
-(The following are installed using homebrew cask)
+Manually installed conda ;(
 
-- Dropbox
-- Firefox
-- Java
-- [Sublime Text](http://sublimetext.com)
-- TextMate
-- Text Wrangler
-- MacTeX
-- [RStudio](http://rstudio.com)
-- [Atom](https://atom.io/)
-- Google Chrome
+`install_conda_packages.sh` has the conda packages installed.
 
-## Applications installed from Homebrew
-
-- git
-- wget
-- numpy
-- scipy
-- matplotlib
- 
-From homebrew/science
-
-- blast
-- samtools
-- bamtools
-- bedtools
-- bedops
-- bcftools
-- vcftools
-- htslib
-- bwa
-- bowtie
-- bowtie2
-- tophat
-- cufflinks
-- mummer
-- clustal-w
-- clustal-omega
-- fasta
-- fastqc
-- hmmer
-- igv
-- igvtools
-- meme
-- quast
-- lastz
-- abyss
-- igraph
-- picard-tools
-- trinity
-- velvet
-- ray
-- augustus
-- spades
-- soapdenovo
-- cegma
-- glimmerhmm
-- gmap-gsnap
-- blasr
-- kraken
-- plink
-- quake
-- snpeff
-- hotspot
-- sratoolkit
-
-From homebrew/python
-
-- numpy
-- scipy
-- matplotlib
-- pillow
-
-## Installed using Python's pip
-
-- patsy
-- statsmodels
-- cython
-- ipython
-- sympy
-- pandas
-- pymc
-- simpy
-- scikit-image
-- scikit-learn
-- PyX
-- macs2
-
+PROMPT: `export PS1="\[\e[36m\$PWD $\] \e(B\e[m"`
