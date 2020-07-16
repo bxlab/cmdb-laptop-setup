@@ -1,0 +1,45 @@
+---
+- hosts: all
+  connection: local
+  tasks:
+
+    - name: Run conda init
+      shell: conda init
+      args:
+        executable: /bin/bash
+
+    - name: Update conda
+      conda:
+        name: conda
+        state: latest
+        executable: /opt/conda/bin/conda
+
+    - name: Install conda packages
+      conda:
+        name:
+          - bwa
+          - bowtie
+          - bowtie2
+          - hisat2
+          - stringtie
+          - cufflinks
+          - samtools
+          - bedtools
+          - fastqc
+          - sra-tools
+          - blast
+          - numpy
+          - scipy
+          - pandas
+          - sympy
+          - pymc
+          - scikit-learn
+          - scikit-image
+          - cython
+          - ipython
+          - jupyter
+          - patsy
+          - statsmodels
+          - matplotlib
+          - seaborn
+        environment: python3

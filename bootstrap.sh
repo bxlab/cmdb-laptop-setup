@@ -14,8 +14,8 @@ sudo pip install paramiko PyYAML jinja2 httplib2
 sudo pip install ansible
 
 # Get the playbook
-git clone https://github.com/jxtx/mac-dev-playbook.git
+git clone https://github.com/bxlab/cmdb-laptop-setup.git
 
 # Run the playbook
-cd mac-dev-playbook
+cd cmdb-laptop-setup
 ansible-playbook main.yml -i localhost, --ask-sudo-pass
