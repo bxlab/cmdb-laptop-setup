@@ -4,11 +4,11 @@
   git: >
     repo=https://github.com/i11/dotfiles.git
     dest=/tmp/dotfiles
-  sudo: no
+  become: no
 
 - name: Bootstrap the dotfiles
   shell: set -- -f; source bootstrap.sh chdir=/tmp/dotfiles
 
-- name: Run .osx dotfiles.
-  shell: ./.osx chdir=~/
-  sudo: yes
+- name: Run setup script
+  shell: preferences/setup.sh
+  become: no

@@ -2,50 +2,55 @@
 - hosts: all
   connection: local
   tasks:
+     
+    - name: Update homebrew
+      homebrew:
+        update_homebrew: yes
 
-    # - name: Tap additional homebrew repositories we use
-      # homebrew_tap: name={{item}}
-      # with_items:
-        # - homebrew/science
-        # - homebrew/python
-        # - caskroom/cask
-        # - caskroom/fonts
+    - name: Tap additional homebrew repositories we use
+      homebrew_tap:
+        state: absent
+        name:
+          - homebrew/science
+          - homebrew/python
+          - caskroom/cask
+          - caskroom/fonts
       
     - name: Install cask dependencies (Java, Xquartz)
-      homebrew_cask: name={{item}}
-      with_items:
-        - xquartz
-        - java
-     
+      homebrew_cask:
+        name:
+          - xquartz
+          - java
+
     - name: Install packages with homebrew
-      homebrew: name={{item}} state=latest 
-      with_items:
-        - gcc 
-        - git
-        - wget
-        - mosh
-        - tmux
-        - ack
-        - mercurial
-        - vim
-        - neovim
+      homebrew:
+        state: latest
+        name:
+          - gcc 
+          - git
+          - wget
+          - mosh
+          - tmux
+          - ack
+          - mercurial
+          - vim
+          - neovim
         
     - name: Install packages with homebrew cask
-      homebrew_cask: name={{item}} state=present 
-      with_items:
-        - font-dejavu-sans
-        - font-hack-nerd-font
-        - dropbox
-        - firefox
-        - sublime-text
-        - textmate
-        - textwrangler
-        - mactex
-        - r-app
-        - rstudio
-        - atom
-        - google-chrome
-        - conda
-        
-
-
+      homebrew_cask:
+        state: present
+        name:
+          - font-dejavu-sans
+          - font-hack-nerd-font
+          - dropbox
+          - firefox
+          - sublime-text
+          - textmate
+          - bbedit
+          - mactex
+          - r
+          - rstudio
+          - atom
+          - google-chrome
+          - slack
+          - miniconda

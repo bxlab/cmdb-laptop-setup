@@ -9,11 +9,26 @@
   tasks:
     - name: Create Ansible downloads directory
       file: path={{downloads}} state=directory
-    # - include: preferences/softwareupdate.yml
-    # - include: preferences/dotfiles.yml
-    # - include: preferences/preferences.yml
+    - import_tasks: preferences/softwareupdate.yml
+    - import_tasks: preferences/dotfiles.yml
+    # - import_tasks: preferences/preferences.yml
 
-- include: apps/homebrew.yml
+- import_playbook: apps/homebrew.yml
 
-- include: homebrew_packages.yml
+- import_playbook: homebrew_packages.yml
 
+- import playbook: conda_packages.yml
+
+- name: Run setup scripts
+  - hosts: all
+    connection: local
+  tasks:
+    - name: Run conda setup
+      shell: install_conda_packages.sh
+      args:
+        executable: /bin/bash
+
+    - name: Fetch data
+      shell: get_data.sh
+      args:
+        executable: /bin/bash

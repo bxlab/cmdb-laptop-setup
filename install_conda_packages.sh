@@ -1,7 +1,19 @@
+/opt/local/miniconda/bin/conda init --reverse
+/opt/local/miniconda/bin/conda init
+
+source ~/.bash_profile
+
 conda config --add channels defaults
 conda config --add channels conda-forge
 conda config --add channels bioconda
+conda config --add channels bokeh
 
-conda install bwa bowtie bowtie2 hisat2 stringtie cufflinks samtools bedtools fastqc \
-    sra-tools blast \
-    numpy scipy pandas sympy pymc scikit-learn scikit-image cython ipython jupyter patsy statsmodels matplotlib seaborn
+conda update -n base -c defaults conda
+
+conda install python=3.6.10 bwa bowtie bowtie2 hisat2 stringtie cufflinks samtools bedtools
+    fastqc sra-tools blast numpy scipy pandas sympy pymc scikit-learn scikit-image cython \
+    ipython jupyter patsy statsmodels matplotlib seaborn ggplot macs2 bokeh
+
+conda upgrade --all
+
+pip install simpy

@@ -6,7 +6,6 @@
   tasks:
     - name: Install Xcode CLI tools
       shell: /usr/bin/xcode-select --install creates=/usr/bin/gcc
-      sudo: yes
 
     - name: Run Homebrew install script
       shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" creates=/usr/local/bin/brew

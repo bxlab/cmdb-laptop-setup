@@ -18,4 +18,4 @@ git clone https://github.com/bxlab/cmdb-laptop-setup.git
 
 # Run the playbook
 cd cmdb-laptop-setup
-ansible-playbook main.yml -i localhost, --ask-sudo-pass
+ansible-playbook main.yml -i localhost, --ask-become-pass

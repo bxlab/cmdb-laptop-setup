@@ -199,10 +199,6 @@ sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
 # Screen                                                                      #
 ###############################################################################
 
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
@@ -752,3 +748,10 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 
 # Install Sublime Text settings
 cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
+
+###############################################################################
+# Change prompt                                                               #
+###############################################################################
+
+# Remove .bash_profile and replace with command line prompt
+echo 'export PS1="[\e[36m\$PWD $\e[m] \e(B\e[m"' > ~/.bash_profile
