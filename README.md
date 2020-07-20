@@ -8,4 +8,4 @@ Manually installed conda ;(
 
 `install_conda_packages.sh` has the conda packages installed.
 
-PROMPT: `export PS1="\[\e[36;5;9m\][$PWD $]\[\e[38;5;254m\]"`
+PROMPT: `export PS1="\[\e[36;5;9m\][\w $]\[\e[38;5;254m\]"`

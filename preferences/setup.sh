@@ -754,4 +754,4 @@ cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ 
 ###############################################################################
 
 # Remove .bash_profile and replace with command line prompt
-echo 'export PS1="\[\e[36;5;9m\][$PWD $]\[\e[38;5;254m\]"' > ~/.bash_profile
+echo 'export PS1="\[\e[36;5;9m\][\w $]\[\e[38;5;254m\]"' > ~/.bash_profile
