@@ -17,18 +17,12 @@
 
 - import_playbook: homebrew_packages.yml
 
-- import playbook: conda_packages.yml
-
 - name: Run setup scripts
-  - hosts: all
-    connection: local
+  hosts: all
+  connection: local
   tasks:
     - name: Run conda setup
-      shell: install_conda_packages.sh
-      args:
-        executable: /bin/bash
+      command: "bash install_conda_packages.sh"
 
     - name: Fetch data
-      shell: get_data.sh
-      args:
-        executable: /bin/bash
+      command: "bash get_data.sh"

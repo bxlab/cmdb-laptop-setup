@@ -9,12 +9,11 @@
 
     - name: Tap additional homebrew repositories we use
       homebrew_tap:
-        state: absent
+        state: present
         name:
-          - homebrew/science
-          - homebrew/python
-          - caskroom/cask
-          - caskroom/fonts
+          - brewsci/bio
+          - brewsci/science
+          - homebrew/cask-fonts
       
     - name: Install cask dependencies (Java, Xquartz)
       homebrew_cask:
@@ -35,12 +34,16 @@
           - mercurial
           - vim
           - neovim
-        
+
+    - name: Refresh sudo cache
+      command: "echo none"
+      become: yes
+
     - name: Install packages with homebrew cask
       homebrew_cask:
         state: present
         name:
-          - font-dejavu-sans
+          - font-dejavu
           - font-hack-nerd-font
           - dropbox
           - firefox
@@ -53,4 +56,3 @@
           - atom
           - google-chrome
           - slack
-          - miniconda

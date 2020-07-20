@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Change default shell to bash
+sudo chsh -s /bin/bash
+/bin/bash
+echo "CLICOLOR=1" >> ~/.bash_profile
+
 # This unfortunately pops up a GUI dialog and runs in the background ;(
 sudo /usr/bin/xcode-select --install
 read -p "Complete the command line tools install and then press enter"

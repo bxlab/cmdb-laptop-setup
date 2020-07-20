@@ -1,4 +1,4 @@
 ---
 - name: Trigger software update
   shell: softwareupdate --install --all
-  sudo: yes
+  become: yes
